@@ -14,6 +14,7 @@ const addBears = () => {
         imageUrl: imageUrl
     });
 
+    makeRiver(bearsArray);
     console.log(bearsArray);
     $("#name").val("");
     $("#imageUrl").val("");
@@ -22,7 +23,7 @@ const addBears = () => {
 
 // https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/GrizzlyBearJeanBeaufort.jpg/1024px-GrizzlyBearJeanBeaufort.jpg
 
-addBears();
-makeRiver();
+
+
 
 export { addBears }

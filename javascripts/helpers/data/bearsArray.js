@@ -2,18 +2,20 @@
 const bearsArray = [
     {
         name: 'Brown bear',
-        imageUrl: './../../images/brownbear.jpg'
+        imageUrl: '../../assets/images/brownbear.jpg'
     },
     {
         name: 'Black bear',
-        imageUrl: './../../images/blackbear.jpg'
+        imageUrl: '../../assets/images/blackbear.jpg'
     },
     {
         name: 'Polar Bear',
-        imageUrl: './../../images/polarbear.jpg'
+        imageUrl: '../../assets/images/polarbear.jpg'
     },
     {
         name: 'Panda Bear',
-        imageUrl: './../../images/pandabear.jpg'
+        imageUrl: '../../assets/images/pandabear.jpg'
     }
-]
+];
+
+export { bearsArray }

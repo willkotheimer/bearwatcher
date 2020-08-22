@@ -15,7 +15,6 @@ const addBears = () => {
     });
 
     makeRiver(bearsArray);
-    console.log(bearsArray);
     $("#name").val("");
     $("#imageUrl").val("");
 

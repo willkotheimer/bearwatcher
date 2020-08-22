@@ -4,14 +4,14 @@ import { makeRiver } from './addBearsToDom.js';
 const addBears = () => {
 
 
-
-    console.log("in here bears");
     const name = $("#name").val();
     const imageUrl = $("#imageUrl").val();
 
     bearsArray.push({
         name: name,
-        imageUrl: imageUrl
+        imageUrl: imageUrl,
+        attempts: 0,
+        caughtfish: 0
     });
 
     makeRiver(bearsArray);

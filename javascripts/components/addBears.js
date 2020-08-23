@@ -7,11 +7,13 @@ const addBears = () => {
     const name = $("#name").val();
     const imageUrl = $("#imageUrl").val();
 
+
     bearsArray.push({
         name: name,
         imageUrl: imageUrl,
         attempts: 0,
-        caughtfish: 0
+        caughtfish: 0,
+        dateTimeLastAttempt: 0
     });
 
     makeRiver(bearsArray);
@@ -20,7 +22,7 @@ const addBears = () => {
 
 }
 
-// https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/GrizzlyBearJeanBeaufort.jpg/1024px-GrizzlyBearJeanBeaufort.jpg
+
 
 
 

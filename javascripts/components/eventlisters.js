@@ -2,12 +2,9 @@ import { bearsArray } from './../helpers/data/bearsArray.js';
 import { makeRiver } from './addBearsToDom.js';
 import { totalFish } from '../helpers/data/totalFish.js';
 
-
-
 const makeEvent = (e) => {
-
     const target = e.target.id;
-    console.log("increase attempts" + target);
+    console.log(target);
     const bear = target.split('-');
     const action = bear[0];
     const id = bear[1];
@@ -16,6 +13,7 @@ const makeEvent = (e) => {
             bearsArray[id].attempts++;
             break;
         case 'caught':
+            bearsArray[id].attempts++; //each caught is also an attempt!
             bearsArray[id].caughtfish++;
             bearsArray[id].dateTime = new Date();
             totalFish.amount += 1;

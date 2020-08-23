@@ -2,33 +2,41 @@ import { bearsArray } from '../helpers/data/bearsArray.js';
 import { totalFish } from '../helpers/data/totalFish.js';
 import { makeEvent } from '../components/eventlisters.js';
 
+
 const makeRiver = () => {
 
     $("#river").html("");
     bearsArray.forEach((item, index) => {
         $("#river").append(`
         
+        <div id="card-border"> 
         <div class="card" style="width: 18rem;">
         <div class="img-container" style="background-image: url(${item.imageUrl})">
         </div>
 
             <div class="card-body">
               <h2 class="card-title">${item.name}</h2>
-              <p class="card-text"></p>
+              <div id="award-${index}"></div>
             </div>
             <div class="progressButtons">
-                <button id="attempt-${index}">Attempted</button>
-                <b id="display-attempt-${index}">${item.attempts}</b>
-                <button id="caught-${index}">Caught</button>
-                <b id="display-caught-${index}">${item.caughtfish}</b>
+                <button class="btn btn-warning" id="attempt-${index}"><b id="display-attempt-${index}">${item.attempts}</b><i class="fas fa-fish"></i>Attempted</button>
+                
+                <button class="btn btn-danger" id="caught-${index}"><b id="display-caught-${index}">${item.caughtfish}</b><i class="fas fa-fish"></i> Caught</button>
+                
+                
                 
             </div
             <div class="counters">
-                <h6 id="time">Last Caught:</h6>
-                <b id="timeStamp">${item.dateTime || "none caught"}</b>
-                <h6 id="totalTitle">Total Fish Caught:</h6>
+                <h6 id="time"><i class="fas fa-fish"></i> Last Caught</h6>
+                <b id="timeStamp">${item.dateTime || "<i class='fas fa-ban'></i> none caught"}</b>
+                <h6 id="totalTitle">All Bears <i class="fas fa-fish"></i></h6>
                 <b id="totalCount">${totalFish.amount}</b>
+                <h6 id="totalTitle">% of Total <i class="fas fa-fish"></i></h6>
+                <b id="totalCount">${(item.caughtfish / (totalFish.amount || 1)).toFixed(2)}%</b>
+                <h6 id="totalTitle">% of Own <i class="fas fa-fish"></i></h6>
+                <b id="totalCount">${(item.caughtfish / (item.attempts || 1)).toFixed(2)}%</b>
             </div>
+        </div>
         </div>
         
         `);

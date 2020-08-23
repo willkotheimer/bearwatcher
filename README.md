@@ -1,43 +1,53 @@
-# bearwatcher
+# Week 5 - Bear Watcher project
+This was a group project which we completed individually.
 
-# Bear Watcher
-## Introduction
-Each year between July and September brown bears in the Katmai National Park congregate along the Brooks River.  This river is one of the main rivers that Sockeye Salmon swim up to spawn.  The brown bears wait in the shallows of the river and catch the salmon as they jump over rocks.  Want to see it in [ACTION](https://explore.org/livecams/brown-bears/brown-bear-salmon-cam-brooks-falls)?
+## Motivation
+The motivation of this project was to plan together but complete the project alone, with minimal help. It allowed us to cement knowledge of modules in jquery.
 
-You have been tasked with creating a site scientists and park ranger can use to track these bears.
+## Build status
+MVP is complete. It includes a form to upload images and name the bears, as well as to capture information about attempts and caught fish for each bear. A stretch goal will be to sort them by caught fish and assign a 1st, 2nd, and 3rd status to the bear cards.
 
-## Planning Requirements
-* Create a new github repo called `bear-watcher`
-* Create a github project on this repo
-* Create feature tickets for this assignment
-* Create wireframes for this project and attach them to the appropriate project.
+## Code Style
+Jquery ES6, HTML5, CSS3
 
-## Technical Requirements
-* You must use [Boostrap 4](https://getbootstrap.com/docs/4.0/getting-started/introduction/) to style your page components.
-* Your JS file should be comprised of functions, no actions should happen in your code outside of a function
-* Your HTML and JS should all have proper indentations
-* You should be using ES6 modules
-* Your JS code should be eslint error and warning free
+## Screenshots
 
-## User stories
-* As a user, when the page loads, I should see a bootstrap form that allows me to enter in a bear name and image url for a new bear.
-* As a user, when I click the submit button on the new bear form a bear should be added to the page.
-* As a user, when there are bears that are being tracked (ie after I have added one), I should see all their information displayed on a card.
+![](assets/images/BearWatcher.gif)
 
-## Dev Notes
-* Your project should have 2 modules - bearForm and river.
-  * bearForm - should be the form
-  * river - should display all the bears
+## Wireframe
+https://www.figma.com/file/wYwBAj4kSLAmPZledjaWNg/BearWatcher
 
-## Bonus #1: Tracking Fishing
-* As a user, I should be able to click something on each bear to indicate it has just tried to catch a fish.
-* As a user, I should be able to click something on each bear to indicate it has just successfully caught a fish.
-* As a user, looking at a bear card I should see time stamps and statuses for each time a bear caught a fish or attempted to catch a fish
-* As a user, looking at a bear card, I should see a total number of fish caught tally.
+## Features
+ Additional to allowing users to track fish caught and attempted, the app creates percentage data for each bear and for their contribution to individual fish caught.
 
-## Bonus #2: Fattest Bear Award
-Each year in early september one bear is awarded the Fattest Bear award.  This award goes to the bear who gains the most weight between July and September.  Create an awards section on your application and award GOLD to the bear who has eaten the most fish, SILVER to the bear with the second most eaten fish, and BRONZE to the bear with the third most eaten fish.  Where applicable your application should show two winners for an award if the number of fish is tied.
+## Code Example
+```             
+import { bearsArray } from './../helpers/data/bearsArray.js';
+import { makeRiver } from './addBearsToDom.js';
+import { totalFish } from '../helpers/data/totalFish.js';
 
-Figma Link:
+const makeEvent = (e) => {
+    const target = e.target.id;
+    console.log(target);
+    const bear = target.split('-');
+    const action = bear[0];
+    const id = bear[1];
+    switch (action) {
+        case 'attempt':
+            bearsArray[id].attempts++;
+            break;
+        case 'caught':
+            bearsArray[id].attempts++; //each caught is also an attempt!
+            bearsArray[id].caughtfish++;
+            bearsArray[id].dateTime = new Date();
+            totalFish.amount += 1;
+            break;
+    }
+    makeRiver(bearsArray);
 
-https://www.figma.com/file/wYwBAj4kSLAmPZledjaWNg/BearWatcher?node-id=0%3A1
+}
+export { makeEvent }
+```
+## The Team
+[Will Kotheimer](https://github.com/willkotheimer)
+

@@ -1,5 +1,5 @@
 # Week 5 - Bear Watcher project
-This was a group project which we completed individually.
+This was a group project which we planned together but completed individually.
 
 ## Motivation
 The motivation of this project was to plan together but complete the project alone, with minimal help. It allowed us to cement knowledge of modules in jquery.

@@ -1,22 +1,25 @@
-import { bearsArray } from '../helpers/data/bearsArray.js';
+import { bearsArray, bearsBanner } from '../helpers/data/bearsArray.js';
 import { totalFish } from '../helpers/data/totalFish.js';
 import { makeEvent } from '../components/eventlisters.js';
+import { sortBears } from './sortmethod.js';
 
 
 const makeRiver = () => {
 
     $("#river").html("");
-    bearsArray.forEach((item, index) => {
+
+    sortBears(bearsArray, 'caughtfish').forEach((item, index) => {
         $("#river").append(`
         
         <div id="card-border"> 
         <div class="card" style="width: 18rem;">
         <div class="img-container" style="background-image: url(${item.imageUrl})">
         </div>
+        <div class="award-${(item.caughtfish != 0) ? index : ""}">${(bearsBanner[index] && item.caughtfish != 0) ? bearsBanner[index] : ""}</div>
 
             <div class="card-body">
               <h2 class="card-title">${item.name}</h2>
-              <div id="award-${index}"></div>
+              
             </div>
             <div class="progressButtons">
                 <button class="btn btn-warning" id="attempt-${index}"><b id="display-attempt-${index}">${item.attempts}</b><i class="fas fa-fish"></i>Attempted</button>

@@ -12,7 +12,7 @@ Jquery ES6, HTML5, CSS3
 
 ## Screenshots
 
-![](assets/images/BearWatcher.gif)
+![](assets/images/BearWatcherNew.gif)
 
 ## Wireframe
 https://www.figma.com/file/wYwBAj4kSLAmPZledjaWNg/BearWatcher

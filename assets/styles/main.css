@@ -37,22 +37,31 @@ body {
 .card {
     position: relative;
 }
-.ribbon1 {
+.award-0 {
 color: white;
 background-color: gold;
-content: "Fattest Bear"
+content: "Fattest Bear";
+width:100%;
+height: 50px;
 }
-.ribbon2 {
-    color:black;
-    background-color: silver;
-    content: "Second Fatest Bear"
+.award-1 {
+color:white;
+background-color: silver;
+content: "Second Fattest Bear";
+width:100%;
+height: 50px;
 }
 
-.ribbon3 {
-        color: goldenrod;
-        background-color: white;
-        content: "Third Fatest Bear"
+.award-2 {
+        color: white;
+        background: url(../images/Banner-PNG-Photo.png);
+        background-color: brown;
+        content: "Third Fattest Bear";
+        width:100%;
+        height: 50px;
 }
+
+
 #river-container {
     background: url(../images/river.jpg);
     -webkit-background-size: cover;

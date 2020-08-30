@@ -17,6 +17,12 @@ Jquery ES6, HTML5, CSS3
 ## Wireframe
 https://www.figma.com/file/wYwBAj4kSLAmPZledjaWNg/BearWatcher
 
+##URL
+
+[https://bearwatcherapp.netlify.app/](https://bearwatcherapp.netlify.app/)
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/b8db3dd0-5b8e-4ce7-8686-bf1e15f01abe/deploy-status)](https://app.netlify.com/sites/bearwatcherapp/deploys)
+
 ## Features
  Additional to allowing users to track fish caught and attempted, the app creates percentage data for each bear and for their contribution to individual fish caught.
 
